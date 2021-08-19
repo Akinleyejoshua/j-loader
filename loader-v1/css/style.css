@@ -1,0 +1,57 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+}
+
+.loader {
+    width: 15rem;
+    height: 15rem;
+    /* background: whitesmoke; */
+    border-radius: 50%;
+    margin: 5rem;
+}
+
+.center {
+    padding: 1rem;
+    background: whitesmoke;
+    height: 100%;
+    border-radius: 50%;
+    width: 100%;
+    position: relative;
+}
+
+.circle {
+    height: 100%;
+    width: 100%;
+    /* background: red; */
+    animation: orbit infinite 2s;
+    position: absolute;
+    left: 0%;
+    bottom: 0%;
+}
+
+.circle.spin:after {
+    content: attr(style);
+    height: 5%;
+    width: 5%;
+    content: "";
+    background: royalblue;
+    border-radius: 50%;
+    position: absolute;
+}
+
+@keyframes orbit {
+    to {
+        transform: rotate(360deg);
+    }
+
+    from {
+        transform: rotate(0deg);
+    }
+}
